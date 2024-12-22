@@ -8,6 +8,7 @@ include 'koneksi.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
 
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -193,8 +194,9 @@ include 'koneksi.php';
         echo "<td>".$data[3]."</td>";
         echo "<td>";
         
-        echo "<a href='?ke=pengujungupdate&kd=".$data[0]."' button class='btn btn-primary'>Update</button></a>";
-        echo "<a href='?ke=pengujunghapus&kd=".$data[0]."' button class='btn btn-danger'>Hapus</button></a>";
+        echo "<a href='ubah_pengunjung.php?kd=".$data[0]."' button class='btn btn-primary'>Update</button></a>";
+        
+        echo "<a href='hps_pengunjung.php?kd=".$data[0]."' button class='btn btn-danger'>Hapus</button></a>";
         
         echo "</td>";
         echo "</tr>";

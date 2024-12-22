@@ -1,6 +1,22 @@
-<?php
-include 'koneksi.php';
-?>
+ <?php
+ include 'koneksi.php';
+  if (isset($_POST['bsimpan'])) {
+    $a = $_POST['tNama'];
+    $b = $_POST['tAngkatan'];
+    $c = $_POST['tKunjungan'];
+
+    $simpan = mysqli_query($koneksi, "INSERT INTO tb_pengujung values('','$a','$b','$c')");
+
+    if ($simpan){
+      header('location: pengunjung.php');
+      exit();
+    }else{
+      echo "<p>Data Gagal Disimpan</p>";
+    }
+  }
+
+        ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,22 +167,7 @@ include 'koneksi.php';
               <!-- /.card-header -->
               <!-- form start -->
 
-  <?php
-  if (isset($_POST['bsimpan'])) {
-    $a = $_POST['tNama'];
-    $b = $_POST['tAngkatan'];
-    $c = $_POST['tKunjungan'];
-
-    $simpan = mysqli_query($koneksi,"INSERT INTO tb_pengujung values('','$a','$b','$c')");
-
-    if ($simpan) {
-      header('location:pengunjung.php');
-      exit();
-    }else{
-      echo "<p>Data Gagal Disimpan</p>";
-    }
-  }
-  ?>
+ 
 
               <form method="POST" action="" class="form-horizontal">
                 <div class="card-body">
